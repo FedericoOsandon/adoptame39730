@@ -4,7 +4,9 @@ const userModel = require("./models/User.js")
 class Users {
     
     get = (params) =>{
-        return userModel.find(params);
+        const users = userModel.find({});
+        console.log(users)
+        return users
     }
 
     getBy = (params) =>{
