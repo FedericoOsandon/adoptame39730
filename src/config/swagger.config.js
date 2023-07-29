@@ -1,4 +1,4 @@
-const  {dirname} = require('node:path') 
+const  {dirname} = require('path') 
 exports.swaggerOpotion = {
     definition: {
         openapi: '3.0.1',
