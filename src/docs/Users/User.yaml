@@ -1,0 +1,48 @@
+paths: 
+  /api/users/:
+    get:
+      summary: Obtiene todos los usuarios
+      tags: 
+        - Users
+      responses:
+        '200':
+          description: Los usuarios fueron obtenidos correctramente
+          content:
+            applications/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Users'
+    post:
+      summary: Crea un nuevo usuario
+      tags: 
+        - Users
+      responses: 
+        '201':
+        description: El usuario nuevo fue creado.
+components: 
+  schemas: 
+    Users:
+      type: object
+      properties: 
+        _id:
+          type: string
+          description: Este es  el id  autogenerado por mong
+        first_name:
+          type: string
+          description: Este es  nombre
+        last_name:
+          type: string
+          description: Este es  el apellido
+        password:
+          type: string
+          description: Este es  el pass
+        email:
+          type: string
+          description: email único
+      example: 
+        _id: ObjectId('fahjsdfk asdf-asdhfas.dhfa.asdjfhkh')
+        first_name: Federico
+        last_name: Osandón
+        password: 123456
+        email: f@gmail.com
