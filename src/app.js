@@ -27,6 +27,8 @@ app.use(cookieParser())
 app.use(cors())
 app.use(addLogger)
 
+app.use(express.static(__dirname+'/public'))
+
 const spec = swaggerJdDoc(swaggerOpotion)
 app.use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(spec))
 app.use('/api/users',usersRouter) 

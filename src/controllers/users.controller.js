@@ -5,6 +5,7 @@ const { createHash } = require("../utils/index.js");
 const getAllUsers = async(req,res)=>{
     try {        
         const users = await usersService.getAll()
+        // console.log(users)
         res.send({status:"success",payload:users})
     } catch (error) {
         logger.error(error)
